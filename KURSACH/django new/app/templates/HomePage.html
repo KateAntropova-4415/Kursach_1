@@ -51,21 +51,13 @@
             {% endif %}
  
 <table align="center" border="1">
-<tr><th colspan="2">Выберите вокзал</th></tr>
-<tr>
-
-<td align="center" >январь</td>
-<td align="center">февраль</td>
-
-</tr>
-<tr>
-<td align="center" >январь</td>
-<td align="center" >февраль</td>
-
-</tr>
-</table>
-{% for dep in departaments %}
-    <p><b>Факультет:</b>{{dep.name}}</p>
+<tr><th colspan="1">Выберите вокзал</th></tr>
+{% for station in railway_station %}
+ <tr>
+<td align="center" >{{station.name}}</td>
+ </tr>
 {% endfor %}
+</table>
+
 </body>
 </html>

@@ -16,7 +16,7 @@ import json
 with open("json_data1.json", 'r') as read_file:
     data = json.load(read_file)
     stations = data['railway_station']
-    
+    dict_stations = {'railway_station': stations}
         
 
 with open("json_data.json", 'r') as read_file:
@@ -134,7 +134,7 @@ def input(request):
 def example(request):
     return render(request, 'Example.html', {})
 def home(request):
-    return render(request, 'HomePage.html', {} )
+    return render(request, 'HomePage.html', dict_stations)
 def page2(request):
     return render(request, 'page2.html', {})
 def trains(request):
