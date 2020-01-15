@@ -49,7 +49,7 @@
             {% else%}
                 <button><a href="/account/">{{ request.session.login }}</a> </button>
             {% endif %}
- 
+ <hr>
 <table align="center" border="1">
 <tr><th colspan="1">Выберите вокзал</th></tr>
 {% for station in railway_station %}
@@ -58,6 +58,7 @@
  </tr>
 {% endfor %}
 </table>
+<hr>
 
 </body>
 </html>

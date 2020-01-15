@@ -177,7 +177,6 @@ def login(request):
         checkLogin = req.get("login")
         checkPass = req.get("password")
         error = 'Неправильно введён логин или пароль'
- #       checkFunc = "none"
         for user in users['users']:
             if user['login'] == checkLogin and user['password'] == checkPass:
                 request.session.set_expiry(15)
@@ -190,7 +189,6 @@ def login(request):
                     return redirect("/moder")
                 elif request.session['position'] == "User":
                     return redirect("/account")
-                # return redirect("/account")
 
     return render(request, 'login.html', {'form': logForm,
                                           'error': error}) 

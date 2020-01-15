@@ -69,3 +69,25 @@
 
 </body>
 </html>
+
+
+<table align="center" border="1">
+<tr><th colspan="1">Выберите пункт отправления</th></tr>
+{% for station in railway_station %}
+{% for trip in station.trips %}
+ <tr>
+<td align="center" >{{station.departure}}</td>
+ </tr>
+{% endfor %}
+ {% endfor %}
+</table>
+<table align="center" border="1">
+<tr><th colspan="1">Выберите пункт назначения</th></tr>
+{% for station in railway_station %}
+{% for trip in station.trips %}
+ <tr>
+<td align="center" >{{station.arrival}}</td>
+ </tr>
+{% endfor %}
+{% endfor %}
+</table>

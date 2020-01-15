@@ -70,6 +70,7 @@
     <Content Include="app\templates\moder.html" />
     <Content Include="app\templates\Page1.html" />
     <Content Include="app\templates\page2.html" />
+    <Content Include="app\templates\point-trains.html" />
     <Content Include="app\templates\trains.html" />
     <Content Include="app\templates\universityInfo.html" />
     <Content Include="app\templates\universityStructure.html" />
