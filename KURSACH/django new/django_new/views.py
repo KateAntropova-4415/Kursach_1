@@ -186,7 +186,13 @@ def login(request):
                 request.session['id'] = user['id']
                 request.session['login'] = user['login']
                 request.session['position'] = user['position']
-                return redirect("/account")
+                if request.session['position'] == "Admin":
+                    return redirect("/administ")
+                elif request.session['position'] == "Moder":
+                    return redirect("/moder")
+                elif request.session['position'] == "User":
+                    return redirect("/account")
+                # return redirect("/account")
 
     return render(request, 'login.html', {'form': logForm,
                                           'error': error}) 
