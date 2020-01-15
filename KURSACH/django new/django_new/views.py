@@ -139,8 +139,6 @@ def page2(request):
     return render(request, 'page2.html', {})
 def trains(request):
     return render(request, 'trains.html', {})
-def homes(request):
-    return render(request, 'home.html', {})
 
 def account(request):
     page = 'account.html'
