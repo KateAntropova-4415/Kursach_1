@@ -1,0 +1,19 @@
+﻿  
+{% extends 'pattern.html' %}
+{% block title %}
+    Главная
+{% endblock %}
+{% block header %}
+    {{ block.super }}
+{% endblock %}
+
+    {% block content %}
+        <p>
+            {% if "id" not in request.session %}
+                <button><a href="/login/">Авторизация</a></button>
+            {% else%}
+                <button><a href="/account/">{{ request.session.login }}</a> </button>
+            {% endif %}
+        </p>
+    {% endblock %}
+
