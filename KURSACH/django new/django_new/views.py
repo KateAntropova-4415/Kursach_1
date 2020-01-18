@@ -192,3 +192,16 @@ def login(request):
 
     return render(request, 'login.html', {'form': logForm,
                                           'error': error}) 
+
+def point_trains(request, station_id):
+    with open("json_data1.json", 'r') as read_file:
+        data = json.load(read_file)
+        station_id = int(station_id)
+        station_name = data['railway_station'][station_id]['name']
+        trips_dep = data['railway_station'][station_id]['trips'][0]['departure']
+        trips_arr = data['railway_station'][station_id]['trips'][0]['arrival']
+        dict_trips = {  'name': station_name,
+                        'departure': trips_dep,
+                        'arrival': trips_arr}
+
+    return render(request, 'point-trains.html', dict_trips)

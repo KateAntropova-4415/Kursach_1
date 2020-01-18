@@ -1,123 +1,219 @@
 {
   "railway_station": [
     {
-      "id": 1,
-      "name": "Северный",
+      "id": 0,
+      "name": "Белорусский вокзал",
       "trips": [
         {
-          "train_name": "HighSpeed",
-          "train_model": "SpeedforYou",
-          "train_type": "№100",
-          "class": "Первый класс",
-          "departure": "Санкт-Петербург",
-          "arrival": "Уфа",
-          "time_dep": "21.06.2020 20:10",
-          "time_arr": "23.06.2020 19:30",
-          "price": "4500"
-        },
-        {
-          "train_name": "LowSpeed",
-          "train_model": "SpeedforYou",
-          "train_type": "№150",
-          "class": "Эконом класс",
-          "departure": "Воронеж",
-          "arrival": "Уфа",
-          "time_dep": "15.06.2020 3:15",
-          "time_arr": "18.06.2020 8:00",
-          "price": "8500"
-        },
-        {
-          "train_name": "SoDance",
-          "train_model": "SuperJet",
-          "train_type": "№005",
-          "class": "Медиум класс",
-          "departure": "Санкт-Петербург",
-          "arrival": "Воронеж",
-          "time_dep": "5.03.2020 6:10",
-          "time_arr": "13.03.2020 4:45",
-          "price": "6500"
+          "departure": [
+            {
+              "train_name": "086У",
+              "train_model": "Нефирменный",
+              "train_type": "Дальний",
+              "class": "Первый",
+              "departure": "Санкт-Петербург",
+              "time_dep": "21.02.2020 20:10",
+              "time_arr": "23.02.2020 19:30",
+              "price": "4500"
+            },
+            {
+              "train_name": "056А",
+              "train_model": "Нефирменный",
+              "train_type": "Дальний",
+              "class": "Эконом",
+              "departure": "Воронеж",
+              "time_dep": "15.03.2020 3:15",
+              "time_arr": "18.03.2020 8:00",
+              "price": "8500"
+            },
+            {
+              "train_name": "332У",
+              "train_model": "Ленинградский",
+              "train_type": "Дальний",
+              "class": "Медиум",
+              "departure": "Санкт-Петербург",
+              "time_dep": "5.04.2020 6:10",
+              "time_arr": "13.04.2020 4:45",
+              "price": "6500"
+            }
+          ],
+          "arrival": [
+            {
+              "train_name": "457Н",
+              "train_model": "Нефирменный",
+              "train_type": "Скорый",
+              "class": "Первый",
+              "arrival": "Уфа",
+              "time_dep": "21.05.2020 20:10",
+              "time_arr": "23.05.2020 19:30",
+              "price": "4500"
+            },
+            {
+              "train_name": "456",
+              "train_model": "Уфимский",
+              "train_type": "Скорый",
+              "class": "Эконом",
+              "arrival": "Уфа",
+              "time_dep": "15.06.2020 3:15",
+              "time_arr": "18.06.2020 8:00",
+              "price": "8500"
+            },
+            {
+              "train_name": "567О",
+              "train_model": "Нефирменный",
+              "train_type": "Скорый",
+              "class": "Медиум",
+              "arrival": "Воронеж",
+              "time_dep": "5.07.2020 6:10",
+              "time_arr": "13.07.2020 4:45",
+              "price": "6500"
+            }
+          ]
         }
-
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Казанский вокзал",
+      "trips": [
+        {
+          "departure": [
+            {
+              "train_name": "014Е",
+              "train_model": "Южный Урал",
+              "train_type": "Скорый",
+              "class": "Первый",
+              "departure": "Уфа",
+              "time_dep": "21.06.2020 20:10",
+              "time_arr": "22.06.2020 19:30",
+              "price": "4500"
+            },
+            {
+              "train_name": "392У",
+              "train_model": "Нефирменный",
+              "train_type": "Пассажирский",
+              "class": "Эконом",
+              "departure": "Воронеж",
+              "time_dep": "28.06.2020 3:15",
+              "time_arr": "29.06.2020 8:00",
+              "price": "8500"
+            },
+            {
+              "train_name": "086У",
+              "train_model": "Италмас",
+              "train_type": "Пассажирский",
+              "class": "Медиум",
+              "departure": "Санкт-Петербург",
+              "time_dep": "5.07.2020 6:10",
+              "time_arr": "13.07.2020 4:45",
+              "price": "6500"
+            }
+          ],
+          "arrival": [
+            {
+              "train_name": "013Е",
+              "train_model": "Южный Урал",
+              "train_type": "Скорый",
+              "class": "Первый",
+              "arrival": "Уфа",
+              "time_dep": "23.06.2020 20:10",
+              "time_arr": "24.06.2020 19:30",
+              "price": "4500"
+            },
+            {
+              "train_name": "098И",
+              "train_model": "Челябинский",
+              "train_type": "Дальний",
+              "class": "Эконом",
+              "arrival": "Уфа",
+              "time_dep": "15.07.2020 3:15",
+              "time_arr": "16.07.2020 8:00",
+              "price": "8500"
+            },
+            {
+              "train_name": "065А",
+              "train_model": "Нефирменный",
+              "train_type": "Пассажирский",
+              "class": "Медиум",
+              "arrival": "Воронеж",
+              "time_dep": "5.08.2020 6:10",
+              "time_arr": "13.8.2020 4:45",
+              "price": "6500"
+            }
+          ]
+        }
       ]
     },
     {
       "id": 2,
-      "name": "Южный",
+      "name": "Ленинградский вокзал",
       "trips": [
         {
-          "train_name": "HighSpeed",
-          "train_model": "SpeedforYou",
-          "train_type": "№100",
-          "class": "Первый класс",
-          "departure": "Санкт-Петербург",
-          "arrival": "Уфа",
-          "time_dep": "21.06.2020 20:10",
-          "time_arr": "23.06.2020 19:30",
-          "price": "4500"
-        },
-        {
-          "train_name": "LowSpeed",
-          "train_model": "SpeedforYou",
-          "train_type": "№150",
-          "class": "Эконом класс",
-          "departure": "Воронеж",
-          "arrival": "Уфа",
-          "time_dep": "15.06.2020 3:15",
-          "time_arr": "18.06.2020 8:00",
-          "price": "8500"
-        },
-        {
-          "train_name": "SoDance",
-          "train_model": "SuperJet",
-          "train_type": "№005",
-          "class": "Медиум класс",
-          "departure": "Санкт-Петербург",
-          "arrival": "Воронеж",
-          "time_dep": "5.03.2020 6:10",
-          "time_arr": "13.03.2020 4:45",
-          "price": "6500"
+          "departure": [
+            {
+              "train_name": "052У",
+              "train_model": "Ленинградский",
+              "train_type": "Скорый",
+              "class": "Средний",
+              "departure": "Санкт-Петербург",
+              "time_dep": "5.02.2020 9:00",
+              "time_arr": "6.02.2020 10:50",
+              "price": "2500"
+            },
+            {
+              "train_name": "098У",
+              "train_model": "Нефирменный",
+              "train_type": "Скорый",
+              "class": "Эконом",
+              "departure": "Воронеж",
+              "time_dep": "8.03.2020 5:05",
+              "time_arr": "9.03.2020 8:00",
+              "price": "8500"
+            },
+            {
+              "train_name": "099Е",
+              "train_model": "Ленинградский",
+              "train_type": "Скорый",
+              "class": "Медиум",
+              "departure": "Санкт-Петербург",
+              "time_dep": "5.04.2020 6:30",
+              "time_arr": "8.04.2020 5:45",
+              "price": "6500"
+            }
+          ],
+          "arrival": [
+            {
+              "train_name": "099Е",
+              "train_model": "Ленинградский",
+              "train_type": "Скорый",
+              "class": "Средний",
+              "arrival": "Санкт-Петербург",
+              "time_dep": "5.02.2020 9:00",
+              "time_arr": "6.02.2020 10:50",
+              "price": "2500"
+            },
+            {
+              "train_name": "013У",
+              "train_model": "Нефирменный",
+              "train_type": "Скорый",
+              "class": "Эконом",
+              "arrival": "Уфа",
+              "time_dep": "8.03.2020 5:05",
+              "time_arr": "9.03.2020 8:00",
+              "price": "8500"
+            },
+            {
+              "train_name": "088К",
+              "train_model": "Нефирменный",
+              "train_type": "Дальний",
+              "class": "Медиум",
+              "arrival": "Уфа",
+              "time_dep": "5.04.2020 6:30",
+              "time_arr": "8.04.2020 5:45",
+              "price": "6500"
+            }
+          ]
         }
-
-      ]
-    },
-    {
-      "id": 3,
-      "name": "Западный",
-      "trips": [
-        {
-          "train_name": "SuperTrain",
-          "train_model": "Train100",
-          "train_type": "№55",
-          "class": "Средний класс",
-          "departure": "Санкт-Петербург",
-          "arrival": "Москва",
-          "time_dep": "5.09.2020 9:00",
-          "time_arr": "6.09.2020 10:50",
-          "price": "2500"
-        },
-        {
-          "train_name": "Trainforyou",
-          "train_model": "Newtrain",
-          "train_type": "№10",
-          "class": "Эконом класс",
-          "departure": "Воронеж",
-          "arrival": "Санкт-Петербург",
-          "time_dep": "8.03.2020 5:05",
-          "time_arr": "9.03.2020 8:00",
-          "price": "8500"
-        },
-        {
-          "train_name": "SoЕкфшт",
-          "train_model": "SuperJet",
-          "train_type": "№005",
-          "class": "Медиум класс",
-          "departure": "Санкт-Петербург",
-          "arrival": "Уфа",
-          "time_dep": "5.03.2020 6:30",
-          "time_arr": "8.03.2020 5:45",
-          "price": "6500"
-        }
-
       ]
     }
 

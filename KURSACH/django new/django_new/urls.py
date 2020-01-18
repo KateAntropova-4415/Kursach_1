@@ -27,6 +27,7 @@ urlpatterns = [
     path('login/', views.login, name='login'),
     path('account/', views.account, name='account'),
     path('administ/', views.administ, name='administ'),
-    path('moder/', views.moder, name='moder')
+    path('moder/', views.moder, name='moder'),
+    url('(?P<station_id>\d+)', views.point_trains, name='station_detail_url')
     
 ]

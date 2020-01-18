@@ -5,7 +5,7 @@
     
     <link href = "style.css" rel = "stylesheet">
     <meta charset="utf-8" />
-    <title>Железнодорожные вокзалы</title>
+    <title>Железнодорожные вокзалы Москвы</title>
    <style type="text/css">
    TABLE {
     width: 1000px; /* Ширина таблицы */
@@ -40,9 +40,9 @@
   </style>
 </head>
 
-<body bgcolor="#FFE4B5">
+<body bgcolor="#FFE4B5" link="black" vlink="#FF0000." alink="#800080">
  <hr>
-<h1 style="color:#8B0000;text-align: left;">Железнодорожные вокзалы </h1>
+<h1 style="color:#8B0000;text-align: left;">Железнодорожные вокзалы Москвы</h1>
 <hr>
 {% if "id" not in request.session %}
                 <button><a href="/login/">Авторизоваться</a></button>
@@ -54,7 +54,7 @@
 <tr><th colspan="1">Выберите вокзал</th></tr>
 {% for station in railway_station %}
  <tr>
-<td align="center" >{{station.name}}</td>
+<td align="center" > <a href="{% url 'station_detail_url' station.id %}">{{station.name}} </a> </td>
  </tr>
 {% endfor %}
 </table>

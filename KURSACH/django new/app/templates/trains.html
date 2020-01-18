@@ -32,18 +32,41 @@
   </style>
 </head>
 <body bgcolor="#FFE4B5">
-    <h1 style="color:#8B0000;text-align: center;">*пункт отправления или прибытия*</h1>
+    <h1 style="color:#8B0000;text-align: center;">Отправление</h1>
     <table align="center" border="1">
 <tr><th colspan="2">Информация о поездке</th><th colspan="4">Поезд</th></tr>
 <tr><th colspan="1">Пункт отправл. и время</th><th colspan="1">Пункт прибытия и время</th><th colspan="1">Название</th><th colspan="1">Модель</th><th colspan="1">Тип</th><th colspan="1">Класс обслуживания</th></tr>
+{% for trip in depature %}
 <tr>
-<td align="center" >Питер 15:00 21.01.2020</td>
+<td align="center" >{{trip.departure}} 15:00 21.01.2020</td>
 <td align="center">Уфа 16:00 23.01.2020</td>
 <td align="center" >Trains</td>
 <td align="center">Speed</td>
 <td align="center" >Скорый</td>
 <td align="center">Эконом</td>
 </tr>
+{% endfor %}
+<tr>
+<td align="center" >январь</td>
+<td align="center" >февраль</td>
+
+</tr>
+</table>
+<hr>
+ <h1 style="color:#8B0000;text-align: center;">Прибытие</h1>
+<table align="center" border="1">
+<tr><th colspan="2">Информация о поездке</th><th colspan="4">Поезд</th></tr>
+<tr><th colspan="1">Пункт отправл. и время</th><th colspan="1">Пункт прибытия и время</th><th colspan="1">Название</th><th colspan="1">Модель</th><th colspan="1">Тип</th><th colspan="1">Класс обслуживания</th></tr>
+{% for trip in arrival %}
+<tr>
+<td align="center" >{{trip.departure}} 15:00 21.01.2020</td>
+<td align="center">Уфа 16:00 23.01.2020</td>
+<td align="center" >Trains</td>
+<td align="center">Speed</td>
+<td align="center" >Скорый</td>
+<td align="center">Эконом</td>
+</tr>
+{% endfor %}
 <tr>
 <td align="center" >январь</td>
 <td align="center" >февраль</td>

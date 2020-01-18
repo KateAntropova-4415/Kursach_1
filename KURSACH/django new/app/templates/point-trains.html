@@ -1,11 +1,68 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>Выбранный пункт</title>
+    <style type="text/css">
+   TABLE {
+    width: 1300px; /* Ширина таблицы */
+    border: 2px solid black; /* Рамка вокруг таблицы */
+    background: #FFFFE0; /* Цвет фона */
+    color: black; /* Цвет текста */
+   }
+        TD, TH {
+            font-size: 15pt;
+            text-align: center; /* Выравнивание по центру */
+            padding: 3px; /* Поля вокруг текста */
+        }
+        TH {
+            background: #8B0000;
+            color: white; /* Цвет текста */
+            border-bottom: 4px double black; /* Двойная линия снизу */
+        }
+        .even { /* Стиль для четных колонок */
+            background: #ffe4b5; /* Цвет фона */
+            color: black; /* Цвет текста */
+        }
+   .lc { /* Стиль для первой колонки */
+    text-align: left; /* Выравнивание по левому краю */
+    color: #fffacd; /* Цвет текста */
+   }
+  </style>
 </head>
-<body>
-
+<body bgcolor="#FFE4B5">
+    <h1 style="color:#8B0000;text-align: center;">{{name}}</h1>
+    <h2 style="color:#8B0000;text-align: center;">Прибытие</h2>
+    <table align="center" border="1">
+<tr><th colspan="2">Информация о поездке</th><th colspan="4">Поезд</th></tr>
+<tr><th colspan="1">Пункт отправл. и время</th><th colspan="1">Время прибытия</th><th colspan="1">Название</th><th colspan="1">Модель</th><th colspan="1">Тип</th><th colspan="1">Класс обслуживания</th></tr>
+{% for trip in departure %}
+<tr>
+<td align="center" >{{trip.departure}} {{trip.time_dep}}</td>
+<td align="center">{{trip.time_arr}}</td>
+<td align="center" >{{trip.train_name}}</td>
+<td align="center">{{trip.train_model}}</td>
+<td align="center" >{{trip.train_type}}</td>
+<td align="center">{{trip.class}}</td>
+</tr>
+{% endfor %}
+</table>
+<hr>
+ <h2 style="color:#8B0000;text-align: center;">Отправление</h2>
+<table align="center" border="1">
+<tr><th colspan="2">Информация о поездке</th><th colspan="4">Поезд</th></tr>
+<tr><th colspan="1">Время отправления</th><th colspan="1">Пункт прибытия и время</th><th colspan="1">Название</th><th colspan="1">Модель</th><th colspan="1">Тип</th><th colspan="1">Класс обслуживания</th></tr>
+{% for trip in arrival %}
+<tr>
+<td align="center" >{{trip.time_dep}}</td>
+<td align="center">{{trip.arrival}} {{trip.time_arr}}</td>
+<td align="center" >{{trip.train_name}}</td>
+<td align="center">{{trip.train_model}}</td>
+<td align="center" >{{trip.train_type}}</td>
+<td align="center">{{trip.class}}</td>
+</tr>
+{% endfor %}
+</table>
 </body>
 </html>
