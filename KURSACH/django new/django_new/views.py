@@ -9,6 +9,8 @@ from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.views.decorators.csrf import csrf_exempt
 
+
+
 import json
 #from .models import station
 
@@ -198,10 +200,145 @@ def point_trains(request, station_id):
         data = json.load(read_file)
         station_id = int(station_id)
         station_name = data['railway_station'][station_id]['name']
+        station_adress = data['railway_station'][station_id]['address']
         trips_dep = data['railway_station'][station_id]['trips'][0]['departure']
         trips_arr = data['railway_station'][station_id]['trips'][0]['arrival']
         dict_trips = {  'name': station_name,
+                        'address':station_adress,
                         'departure': trips_dep,
                         'arrival': trips_arr}
 
     return render(request, 'point-trains.html', dict_trips)
+
+#def points(request):
+#    with open("points.json", 'r') as read_file:
+#        data = json.load(read_file)
+#        point_dep=data['point'][0]['departure']
+#        point_arr=data['point'][0]['arrival']
+#        dict_point={ 'points_dep':point_dep,
+#                     'points_arr':point_arr
+#                    }
+#    return render(request, 'page2.html', dict_point)
+
+def point_dep(request, point_name):
+    with open("json_data1.json", 'r') as read_file:
+        data = json.load(read_file)
+        station=data['railway_station']
+        dict_train_dep={}
+        dict_train_ex={}
+        for i in station:
+            trip = i['trips'][0]['departure']
+            for j in trip:
+                if j['departure'] == point_name:
+                    name_stat = i['name']
+                    dep_point = j
+                    #arr_point.append(name_stat)
+                    dict_train_ex={ 'name' : name_stat,
+                                   'points':dep_point
+                        }
+                    dict_train_dep.update(dict_train_ex)
+                    dict_train_ex.clear() 
+
+    return render(request, 'trains_dep.html', dict_train_dep)
+
+def point_arr(request, point_name):
+    with open("json_data1.json", 'r') as read_file:
+        data = json.load(read_file)
+        station = data['railway_station']
+        dict_train_arr = {}
+        dict_train_ex = {}
+        for i in station:
+            for j in i['arrival']:
+                if j['arrival'] == point_name:
+                    name_stat  =i['name']
+                    arr_point = j
+                    arr_point.append(name_stat)
+                    dict_train_ex= { 'name' : name_stat,
+                                    'points':arr_point
+                                   }
+                    dict_train_arr.update(dict_train_ex)
+                    dict_train_ex.clear() 
+
+    return render(request, 'trains_arr.html', dict_train_arr)
+
+def departure(request):
+    with open("points.json", 'r') as read_file:
+        data = json.load(read_file)
+        point_dep=data['point'][0]['departure']
+        dict_point={ 'points':point_dep
+                    }
+    return render(request, 'departure.html', dict_point)
+def arrival(request):
+    with open("points.json", 'r') as read_file:
+        data = json.load(read_file)
+        point_arr=data['point'][0]['arrival']
+        dict_point1={ 
+                     'points':point_arr
+                    }
+    
+    return render(request, 'arrival.html', dict_point1)
+
+def addstation(request):
+    if request.POST:
+        with open("json_data1.json") as read_file_json:
+            data = json.load(read_file_json)
+        Station = data
+        req = request.POST
+        checkName = req.get("name")
+        checkAddress = req.get("address")
+        #checkTime = req.get("Time")
+        checkerror = True
+        for i in Station['railway_station']:
+            if checkName == i['name']:
+                print("Error")
+                checkerror = False
+                break
+        if checkerror:
+            ID = len(Station["railway_station"])
+            newStation = {
+                "id": ID,
+                "name": checkName,
+                "address": checkAddress,
+                #"Work": True,
+                #"Time": checkTime,
+                #"Docks": [],
+                #"Workers": []
+            }
+            data["railway_station"].append(newStation)
+            with open('json_data1.json', 'w', encoding='utf-8') as read_file_json:
+                read_file_json.write(json.dumps(data, ensure_ascii=False, separators=(',', ': '), indent=2))
+
+    return render(request, "addstation.html", {})
+
+@csrf_exempt
+def adduser(request):
+    if request.POST:
+        userform = AddUser()
+        with open("users.json", encoding='utf-8') as read_file_json:
+            data = json.load(read_file_json)
+        users = data['users']
+        req = request.POST
+        checkLogin = req.get("login")
+        checkPass = req.get("password")
+        checkerror = True
+        for i in users:
+            if checkLogin == i['login']:
+                print("Error")
+                checkerror = False
+                break
+        if checkerror:
+            ID = len(users) + 1
+            newuser = {
+                "login": checkLogin,
+                "id": ID,
+                "password": checkPass,
+                
+                #"Work": True,
+                "position": "User"
+            }
+            users.append(newuser)
+            with open('users.json', 'w', encoding='utf-8') as read_file_json:
+                read_file_json.write(json.dumps(users, ensure_ascii=False, separators=(',', ': '), indent=2))
+
+    return render(request, "adduser.html", {})
+

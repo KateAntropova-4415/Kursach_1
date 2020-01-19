@@ -32,30 +32,16 @@
   </style>
 </head>
 <body bgcolor="#FFE4B5">
-    <h1 style="color:#8B0000;text-align: center;">{{name}} - {{address}}</h1>
-    <h2 style="color:#8B0000;text-align: center;">Прибытие</h2>
-    <table align="center" border="1">
-<tr><th colspan="2">Информация о поездке</th><th colspan="4">Поезд</th></tr>
-<tr><th colspan="1">Пункт отправл. и время</th><th colspan="1">Время прибытия</th><th colspan="1">Название</th><th colspan="1">Модель</th><th colspan="1">Тип</th><th colspan="1">Класс обслуживания</th></tr>
-{% for trip in departure %}
-<tr>
-<td align="center" >{{trip.departure}} {{trip.time_dep}}</td>
-<td align="center">{{trip.time_arr}}</td>
-<td align="center" >{{trip.train_name}}</td>
-<td align="center">{{trip.train_model}}</td>
-<td align="center" >{{trip.train_type}}</td>
-<td align="center">{{trip.class}}</td>
-</tr>
-{% endfor %}
-</table>
+    <h1 style="color:#8B0000;text-align: center;">{{name}} - {{adress}}</h1>
+  
 <hr>
  <h2 style="color:#8B0000;text-align: center;">Отправление</h2>
 <table align="center" border="1">
 <tr><th colspan="2">Информация о поездке</th><th colspan="4">Поезд</th></tr>
 <tr><th colspan="1">Время отправления</th><th colspan="1">Пункт прибытия и время</th><th colspan="1">Название</th><th colspan="1">Модель</th><th colspan="1">Тип</th><th colspan="1">Класс обслуживания</th></tr>
-{% for trip in arrival %}
+{% for trip in points %}
 <tr>
-<td align="center" >{{trip.time_dep}}</td>
+<td align="center" >Москва: {{trip.name}} {{trip.time_dep}}</td>
 <td align="center">{{trip.arrival}} {{trip.time_arr}}</td>
 <td align="center" >{{trip.train_name}}</td>
 <td align="center">{{trip.train_model}}</td>

@@ -32,22 +32,15 @@
   </style>
 </head>
 <body bgcolor="#FFE4B5">
-    <h1 style="color:#8B0000;text-align: center;">*название вокзала*</h1>
     <table align="center" border="1">
-<tr><th colspan="1">Пункты прибытия</th><th colspan="1">Пункты отправления</th></tr>
-{% for point in points_dep %}
-{% for poi in points_arr %}
+<tr><th colspan="1">Пункты отправления</th></tr>
+{% for point in points %}
+
 <tr>
-<td align="center" >{{point.name}}</td>
-    <td align="center" >{{poi.name}}</td>
+<td align="center" ><a href="{% url 'trains_dep' point.name %}">{{point.name}} </a></td>
 </tr>
 {% endfor %}
-        {% endfor %}
-{% for point in points_arr %}
-<tr>
-<td align="center" >{{point.name}}</td>
-</tr>
-{% endfor %}
+        
 </table>
 </body>
 </html>

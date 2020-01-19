@@ -11,5 +11,12 @@
     <h1>{{ request.session.login }}</h1>
     <p>{{ dict.position }}</p>
 {% endif %}
+
+    <table>
+    <div class="special"><a href="{% url 'moderatorlist' %}">Список модераторов</a></div>
+    <div class="special"><a href="{% url 'userlist' %}">Список пользователей</a></div>
+    <div class="special"><a href="{% url 'portlist' %}">Список портов</a></div>
+    <div class="special"><a href="{% url 'logout' %}">Выйти</a></div>
+</table>
 </body>
 </html>

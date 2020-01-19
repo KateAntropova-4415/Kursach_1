@@ -1,23 +1,26 @@
-{
-  "users": [
-    {
-      "login": "Kate",
-      "id": 1,
-      "password": "1234",
-      "position": "Admin"
-    },
-    {
-      "login": "Nastya",
-      "id": 2,
-      "password": "4321",
-      "position": "Moder"
-    },
-    {
-      "login": "Ksusha",
-      "id": 3,
-      "password": "12345",
-      "position": "User"
-    }
-
-  ]
-}
+[
+  {
+    "login": "Kate",
+    "id": 1,
+    "password": "1234",
+    "position": "Admin"
+  },
+  {
+    "login": "Nastya",
+    "id": 2,
+    "password": "4321",
+    "position": "Moder"
+  },
+  {
+    "login": "Ksusha",
+    "id": 3,
+    "password": "12345",
+    "position": "User"
+  },
+  {
+    "login": "ghghg",
+    "id": 4,
+    "password": "4567",
+    "position": "User"
+  }
+]
