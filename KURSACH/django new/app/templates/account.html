@@ -48,15 +48,25 @@
     <p>{{ dict.position }}</p>
 {% endif %}
 
-<table  align="center" border="1">
+    <table  align="center" border="1">
         <tr><th colspan="1">Действия</th></tr>
-
-    
+        {% if position == "Admin" %}
+        <tr>
+    <td class="special"><a href="{% url 'moderatorlist' %}">Список модераторов</a></td></tr>
+        {% endif %}
+         {% if position == "Admin" or position == "Moder" %}
+        <tr>
+    <td class="special"><a href="{% url 'userlist' %}">Список пользователей</a></td></tr>
+        {% endif %}
+         {% if position == "Admin" or position == "Moder" %}
+        <tr>
+    <td class="special"><a href="{% url 'stationlist' %}">Список железнодорожных вокзалов</a></td></tr>
+        {% endif %}
+        {% if position == "User" %}
         <tr>
     <td class="special"><a href="{% url 'stationlistuser' %}">Список железнодорожных вокзалов</a></td></tr>
+        {% endif %}
         <tr>
     <td class="special"><a href="{% url 'logout' %}">Выйти</a></td></tr>
-</table>
-</body>
 </body>
 </html>

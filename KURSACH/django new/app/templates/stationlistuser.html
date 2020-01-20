@@ -48,13 +48,13 @@
 <table align="center" border="1" >
         <tr>
             <td colspan="2">
-            <a href="{% url 'station_detail_url' i.id %}">{{ i.name }}</a>
+            <a href="{% url 'station_detail_url_admin' i.id %}">{{ i.name }}</a>
             </td>
     </tr>
 </table>
 
 {% endfor %}
 {% endif %}
-<button><a href="/">Назад</a></button>
+<button><a href="/account">Назад</a></button>
 </body>
 </html>

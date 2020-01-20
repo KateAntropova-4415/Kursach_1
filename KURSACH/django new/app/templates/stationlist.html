@@ -49,7 +49,7 @@
 <table align="center" border="1" >
         <tr>
             <td colspan="2">
-            <a href="{% url 'station_detail_url' i.id %}">{{ i.name }}</a>
+            <a href="{% url 'station_detail_url_admin' i.id %}">{{ i.name }}</a>
             <button><a href="{% url 'addtripdep' i.id %}">Добавить отправление</a></button>
             <button><a href="{% url 'addtriparr' i.id %}">Добавить прибытие</a></button>
             </td>
@@ -58,6 +58,7 @@
 
 {% endfor %}
 {% endif %}
-<button><a href="/">Назад</a></button>
+<p></p>
+    <button><a href="/account">Назад</a></button>
 </body>
 </html>

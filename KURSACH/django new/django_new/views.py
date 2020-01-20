@@ -57,7 +57,8 @@ def account(request):
     page = 'account.html'
     if "id" not in request.session:
         page = "404.html"
-    return render(request, page, {})
+    position=request.session['position']
+    return render(request, page, {'position':position})
 
 def login(request):
     logForm = LoginForm(request.POST or None)
@@ -85,12 +86,12 @@ def login(request):
                 request.session['id'] = user['id']
                 request.session['login'] = user['login']
                 request.session['position'] = user['position']
-                if request.session['position'] == "Admin":
-                    return redirect("/administ")
-                elif request.session['position'] == "Moder":
-                    return redirect("/moder")
-                elif request.session['position'] == "User":
-                    return redirect("/account")
+                #if request.session['position'] == "Admin":
+                #    return redirect("/administ")
+                #elif request.session['position'] == "Moder":
+                #    return redirect("/moder")
+                #elif request.session['position'] == "User":
+                return redirect("/account")
 
     return render(request, 'login.html', {'form': logForm,
                                           'error': error})

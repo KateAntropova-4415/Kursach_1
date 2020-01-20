@@ -32,7 +32,7 @@ urlpatterns = [
     path('stationlist/', views.stationlist, name='stationlist'),
     path('stationlistuser/', views.stationlistuser, name='stationlistuser'),
     path('logout/', views.logout, name="logout"),
-    #url(r'^town/(?P<station_id>\w{1,30})/$', views.point_trains_admin, name='station_detail_url_admin'),
+    url(r'^town/(?P<station_id>\w{1,30})/$', views.point_trains_admin, name='station_detail_url_admin'),
     url(r'^stationlist/add-dep/(?P<station_id>\w{1,30})/$', views.addtripdep, name='addtripdep'),
     url(r'^stationlist/add-arr/(?P<id>\w{1,30})/$', views.addtriparr, name='addtriparr')
 ]

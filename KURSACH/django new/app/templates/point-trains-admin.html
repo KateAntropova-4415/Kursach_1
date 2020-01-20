@@ -33,7 +33,6 @@
 </head>
 <body bgcolor="#FFE4B5">
     <h1 style="color:#8B0000;text-align: center;">{{name}} - {{address}}</h1>
-    <button>Добавить прибытие</button>
     <h2 style="color:#8B0000;text-align: center;">Прибытие</h2>
     <table align="center" border="1">
 <tr><th colspan="2">Информация о поездке</th><th colspan="4">Поезд</th></tr>
@@ -50,8 +49,6 @@
 {% endfor %}
 </table>
 <hr>
-<button><a href="{% url 'addtripdep' id %}">Добавить отправление</a></button>
-<hr>
  <h2 style="color:#8B0000;text-align: center;">Отправление</h2>
 <table align="center" border="1">
 <tr><th colspan="2">Информация о поездке</th><th colspan="4">Поезд</th></tr>
@@ -67,6 +64,7 @@
 </tr>
 {% endfor %}
 </table>
-<button>Добавить прибытие</button>
+<p></p>
+    <button><a href="/account">Назад</a></button>
 </body>
 </html>
