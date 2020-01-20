@@ -304,10 +304,10 @@ def addstation(request):
         checkAddress = req.get("address")
         #checkTime = req.get("Time")
         checkerror = True
-        trip={
+        trip=[{
             "departure":[],
             "arrival":[]
-            }
+            }]
         
         for i in Station['railway_station']:
             if checkName == i['name']:
