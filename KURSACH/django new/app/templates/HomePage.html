@@ -44,10 +44,11 @@
  <hr>
 <h1 style="color:#8B0000;text-align: left;">Железнодорожные вокзалы Москвы</h1>
 <hr>
+     <button><a href="/login/">Авторизоваться</a></button>
 {% if "id" not in request.session %}
                 <button><a href="/login/">Авторизоваться</a></button>
-            {% else%}
-                <button><a href="/account/">{{ request.session.login }}</a> </button>
+            {% else %}
+            <button><a href="/account/">{{ request.session.login }}</a> </button>
             {% endif %}
  <hr>
 <table align="center" border="1">

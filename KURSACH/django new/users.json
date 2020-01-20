@@ -22,5 +22,29 @@
     "id": 4,
     "password": "4567",
     "position": "User"
+  },
+  {
+    "login": "tyutu",
+    "id": 5,
+    "password": "7989",
+    "position": "User"
+  },
+  {
+    "login": "fghjg",
+    "id": 6,
+    "password": "3456",
+    "position": "User"
+  },
+  {
+    "login": "Galina",
+    "id": 7,
+    "password": "2121",
+    "position": "Moder"
+  },
+  {
+    "login": "Tanya",
+    "id": 8,
+    "password": "2121",
+    "position": "Moder"
   }
 ]

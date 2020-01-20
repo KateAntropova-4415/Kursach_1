@@ -24,3 +24,5 @@ class LoginForm(forms.Form):
 class AddUser(forms.Form):
     login = forms.CharField(label="Логин",max_length=50)
     password = forms.CharField(label="Пароль",max_length=50)
+
+#class 

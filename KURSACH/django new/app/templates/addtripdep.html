@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить поездку</title>
+</head>
+<body>
+<fieldset>
+<legend>Добавление новой поездки {{name}}(отправление)</legend>
+ <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+     <p><label for="id_Name">Название :</label> <input type="text" name="Name" maxlength="100" required="" id="id_Name"></p>
+     <p><label for="id_Model">Модель :</label> <input type="text" name="Model" maxlength="100" required="" id="id_Model"></p>
+     <p><label for="id_Type">Тип :</label> <input type="text" name="Type" maxlength="100" required="" id="id_Type"></p>
+     <p><label for="id_Class">Класс :</label> <input type="text" name="Class" maxlength="100" required="" id="id_Class"></p>
+     <p><label for="id_Departure">Отправление :</label> <input type="text" name="Departure" maxlength="100" required="" id="id_Departure"></p>
+     <p><label for="id_Time_dep">Время отправления :</label> <input type="text" name="Time_dep" maxlength="100" required="" id="id_Time_dep"></p>
+     <p><label for="id_Time_arr">Время прибытия :</label> <input type="text" name="Time_arr" maxlength="100" required="" id="id_Time_arr"></p>
+     <p><label for="id_Price">Цена :</label> <input type="text" name="Price" maxlength="100" required="" id="id_Price"></p>
+        <br><input type="submit" value="Создать"/></br>
+    </form>
+</body>
+</html>

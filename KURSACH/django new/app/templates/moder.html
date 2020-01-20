@@ -1,15 +1,62 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
+    
+    <link href = "style.css" rel = "stylesheet">
+    <meta charset="utf-8" />
     <title>Модератор</title>
+   <style type="text/css">
+   TABLE {
+    width: 1000px; /* Ширина таблицы */
+    border: 2px solid black; /* Рамка вокруг таблицы */
+    background: #FFFFE0; /* Цвет фона */
+    color: black; /* Цвет текста */
+   }
+        TD, TH {
+            font-size: 20pt;
+            text-align: center; /* Выравнивание по центру */
+            padding: 10px; /* Поля вокруг текста */
+        }
+        TH {
+            background: #8B0000;
+            color: white; /* Цвет текста */
+            border-bottom: 4px double black; /* Двойная линия снизу */
+        }
+        .even { /* Стиль для четных колонок */
+            background: #ffe4b5; /* Цвет фона */
+            color: black; /* Цвет текста */
+        }
+   .lc { /* Стиль для первой колонки */
+    text-align: left; /* Выравнивание по левому краю */
+    color: #fffacd; /* Цвет текста */
+   }
+   hr {
+    border: none; /* Убираем границу */
+    background-color: black; /* Цвет линии */
+    color: black; /* Цвет линии для IE6-7 */
+    height: 2px; /* Толщина линии */
+   }
+  </style>
 </head>
-<body>
-    <h1>{{ request.session.login }}</h1>
+
+<body bgcolor="#FFE4B5" link="black" vlink="#FF0000." alink="#800080">
+    <h1>{{ request.session.login}} - модератор</h1>
 
 {% if "in" in request.session %}
-    <h1>{{ request.session.login }}</h1>
+    <h1>{{ request.session.login}} - модератор</h1>
     <p>{{ dict.position }}</p>
 {% endif %}
+
+  
+    <table  align="center" border="1">
+        <tr><th colspan="1">Действия</th></tr>
+
+    <td class="special"><a href="{% url 'userlist' %}">Список пользователей</a></td></tr>
+        <tr>
+    <td class="special"><a href="{% url 'stationlist' %}">Список железнодорожных вокзалов</a></td></tr>
+        <tr>
+    <td class="special"><a href="{% url 'logout' %}">Выйти</a></td></tr>
+</table>
 </body>
 </html>

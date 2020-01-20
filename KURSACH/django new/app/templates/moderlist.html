@@ -5,7 +5,7 @@
     
     <link href = "style.css" rel = "stylesheet">
     <meta charset="utf-8" />
-    <title>Администратор</title>
+    <title>Модераторы</title>
    <style type="text/css">
    TABLE {
     width: 1000px; /* Ширина таблицы */
@@ -41,23 +41,21 @@
 </head>
 
 <body bgcolor="#FFE4B5" link="black" vlink="#FF0000." alink="#800080">
-    <h1 align="center">{{ request.session.login}} - администратор</h1>
-
-{% if "in" in request.session %}
-    <h1>{{ request.session.login }} - администратор</h1>
-    <p>{{ dict.position }}</p>
+    <h2 style="color:#8B0000;text-align: center;">Модераторы</h2>
+{%  if Func == "Admin" %}
+<button align="center"><a href="{% url 'addmoderator' %}">Добавить</a></button>
 {% endif %}
 
-    <table  align="center" border="1">
-        <tr><th colspan="1">Действия</th></tr>
-        <tr>
-    <td class="special"><a href="{% url 'moderatorlist' %}">Список модераторов</a></td></tr>
-        <tr>
-    <td class="special"><a href="{% url 'userlist' %}">Список пользователей</a></td></tr>
-        <tr>
-    <td class="special"><a href="{% url 'stationlist' %}">Список железнодорожных вокзалов</a></td></tr>
-        <tr>
-    <td class="special"><a href="{% url 'logout' %}">Выйти</a></td></tr>
+    <table align="center" border="1">
+<tr><th colspan="1">ID</th><th colspan="1">Логин</th><th colspan="1">Пароль</th></tr>
+{% for moderator in moderators %}
+<tr>
+<td align="center" >{{ moderator.id }}</td>
+<td align="center">{{ moderator.login }}</td>
+<td align="center" >{{ moderator.password }}</td>
+</tr>
+{% endfor %}
 </table>
+<button><a href="/">Назад</a></button>
 </body>
 </html>

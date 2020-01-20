@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Порт</title>
+</head>
+<body>
+<h1>Железнодорожные вокзалы:</h1>
+{%  if Func == "Admin" %}
+<button><a href="{% url 'addstation' %}">Добавить</a></button>
+
+{% for i in Station %}
+<table>
+        <tr>
+            <th colspan="2">
+            <a href="{% url 'station_detail_url' i.id %}">{{ i.name }}</a>
+            <button><a href="{% url 'addtripdep' i.id %}">Добавить отправление</a></button>
+            <button><a href="{% url 'addtriparr' i.id %}">Добавить прибытие</a></button>
+            </th>
+    </tr>
+</table>
+
+{% endfor %}
+{% endif %}
+<button><a href="/">Назад</a></button>
+</body>
+</html>

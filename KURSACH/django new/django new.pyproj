@@ -59,7 +59,10 @@
     <Content Include="app\static\app\content\style.css" />
     <Content Include="app\templates\404.html" />
     <Content Include="app\templates\account.html" />
+    <Content Include="app\templates\addmoder.html" />
     <Content Include="app\templates\addstation.html" />
+    <Content Include="app\templates\addtriparr.html" />
+    <Content Include="app\templates\addtripdep.html" />
     <Content Include="app\templates\adduser.html" />
     <Content Include="app\templates\admin.html" />
     <Content Include="app\templates\alluser.html" />
@@ -73,11 +76,15 @@
     <Content Include="app\templates\index.html" />
     <Content Include="app\templates\login.html" />
     <Content Include="app\templates\moder.html" />
+    <Content Include="app\templates\moderlist.html" />
     <Content Include="app\templates\page2.html" />
+    <Content Include="app\templates\point-trains-admin.html" />
     <Content Include="app\templates\point-trains.html" />
+    <Content Include="app\templates\stationlist.html" />
     <Content Include="app\templates\trains.html" />
     <Content Include="app\templates\trains_dep.html" />
     <Content Include="app\templates\trains_arr.html" />
+    <Content Include="app\templates\userlist.html" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />
