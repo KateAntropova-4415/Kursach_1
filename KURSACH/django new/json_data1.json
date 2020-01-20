@@ -232,10 +232,32 @@
       "id": 3,
       "name": "Курский вокзал",
       "address": "Москва",
-      "trip": [
+      "trips": [
         {
-          "departure": [],
-          "arrival": []
+          "departure": [
+            {
+              "train_name": "jkjlk",
+              "train_model": "jkjlk",
+              "train_type": "jkljlk",
+              "class": "jkjlkj",
+              "departure": "jlkjkl",
+              "time_dep": "jkljl",
+              "time_arr": "jkjl",
+              "price": "2424"
+            }
+          ],
+          "arrival": [
+            {
+              "train_name": "yuyuiy",
+              "train_model": "uyiuyiu",
+              "train_type": "uyuiy",
+              "class": "yuiyi",
+              "arrival": "yuiy",
+              "time_dep": "yuyi",
+              "time_arr": "yuyiuy",
+              "price": "yuyiu"
+            }
+          ]
         }
       ]
     }

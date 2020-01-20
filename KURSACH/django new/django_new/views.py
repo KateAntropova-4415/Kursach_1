@@ -320,7 +320,7 @@ def addstation(request):
                 "id": ID,
                 "name": checkName,
                 "address": checkAddress,
-                "trip": trip
+                "trips": trip
             }
             data["railway_station"].append(newStation)
             with open('json_data1.json', 'w', encoding='utf-8') as read_file_json:
@@ -414,7 +414,7 @@ def addtripdep(request, station_id):
         #['railway_station'][station_id]['trips'][0]['departure']
         newtrip = {
                 "train_name": checkName,
-                "train_name": checkModel,
+                "train_model": checkModel,
                 "train_type": checkType,
                 "class": checkClass,
                 "departure": checkDep,
@@ -432,6 +432,7 @@ def addtriparr(request, id):
     if request.POST:
         #id = id - 1
         #dock = dock - 1
+        id=int(id)
         with open("json_data1.json", encoding='utf-8') as read_file_json:
             data = json.load(read_file_json)
         #Station = data
@@ -449,7 +450,7 @@ def addtriparr(request, id):
         #['railway_station'][station_id]['trips'][0]['departure']
         newtrip = {
                 "train_name": checkName,
-                "train_name": checkModel,
+                "train_model": checkModel,
                 "train_type": checkType,
                 "class": checkClass,
                 "arrival": checkArr,
