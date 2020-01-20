@@ -22,18 +22,18 @@ with open("json_data1.json", encoding='utf-8') as read_file:
     stations = data['railway_station']
     dict_stations = {'railway_station': stations}
 
-def example(request):
-    return render(request, 'Example.html', {})
+#def example(request):
+#    return render(request, 'Example.html', {})
 def home(request):
     with open("json_data1.json", encoding='utf-8') as read_file:
         data = json.load(read_file)
         stations = data['railway_station']
         dict_stations = {'railway_station': stations}
     return render(request, 'HomePage.html', dict_stations)
-def page2(request):
-    return render(request, 'page2.html', {})
-def trains(request):
-    return render(request, 'trains.html', {})
+#def page2(request):
+#    return render(request, 'page2.html', {})
+#def trains(request):
+#    return render(request, 'trains.html', {})
 
 def account(request):
     page = 'account.html'
@@ -41,17 +41,17 @@ def account(request):
         page = "404.html"
     return render(request, page, {})
 
-def administ(request):
-    page = 'admin.html'
-    if "id" not in request.session:
-        page = "404.html"
-    return render(request, page, {})
+#def administ(request):
+#    page = 'admin.html'
+#    if "id" not in request.session:
+#        page = "404.html"
+#    return render(request, page, {})
 
-def moder(request):
-    page = 'moder.html'
-    if "id" not in request.session:
-        page = "404.html"
-    return render(request, page, {})
+#def moder(request):
+#    page = 'moder.html'
+#    if "id" not in request.session:
+#        page = "404.html"
+#    return render(request, page, {})
 
 def account(request):
     page = 'account.html'
@@ -121,64 +121,64 @@ def point_trains(request, station_id):
 #                    }
 #    return render(request, 'page2.html', dict_point)
 
-def point_dep(request, point_name):
-    with open("json_data1.json", encoding='utf-8') as read_file:
-        data = json.load(read_file)
-        station=data['railway_station']
-        dict_train_dep={}
-        dict_train_ex={}
-        for i in station:
-            trip = i['trips'][0]['departure']
-            for j in trip:
-                if j['departure'] == point_name:
-                    name_stat = i['name']
-                    dep_point = j
-                    #arr_point.append(name_stat)
-                    dict_train_ex={ 'name' : name_stat,
-                                   'points':dep_point
-                        }
-                    dict_train_dep.update(dict_train_ex)
-                    dict_train_ex.clear() 
+#def point_dep(request, point_name):
+#    with open("json_data1.json", encoding='utf-8') as read_file:
+#        data = json.load(read_file)
+#        station=data['railway_station']
+#        dict_train_dep={}
+#        dict_train_ex={}
+#        for i in station:
+#            trip = i['trips'][0]['departure']
+#            for j in trip:
+#                if j['departure'] == point_name:
+#                    name_stat = i['name']
+#                    dep_point = j
+#                    #arr_point.append(name_stat)
+#                    dict_train_ex={ 'name' : name_stat,
+#                                   'points':dep_point
+#                        }
+#                    dict_train_dep.update(dict_train_ex)
+#                    dict_train_ex.clear() 
+#
+#    return render(request, 'trains_dep.html', dict_train_dep)
 
-    return render(request, 'trains_dep.html', dict_train_dep)
+#def point_arr(request, point_name):
+#    with open("json_data1.json", encoding='utf-8') as read_file:
+#        data = json.load(read_file)
+#        station = data['railway_station']
+#        dict_train_arr = {}
+#        dict_train_ex = {}
+#        for i in station:
+#            for j in i['arrival']:
+#                if j['arrival'] == point_name:
+#                    name_stat  =i['name']
+#                    arr_point = j
+#                    arr_point.append(name_stat)
+#                    dict_train_ex= { 'name' : name_stat,
+#                                    'points':arr_point
+#                                   }
+#                    dict_train_arr.update(dict_train_ex)
+#                    dict_train_ex.clear() 
 
-def point_arr(request, point_name):
-    with open("json_data1.json", encoding='utf-8') as read_file:
-        data = json.load(read_file)
-        station = data['railway_station']
-        dict_train_arr = {}
-        dict_train_ex = {}
-        for i in station:
-            for j in i['arrival']:
-                if j['arrival'] == point_name:
-                    name_stat  =i['name']
-                    arr_point = j
-                    arr_point.append(name_stat)
-                    dict_train_ex= { 'name' : name_stat,
-                                    'points':arr_point
-                                   }
-                    dict_train_arr.update(dict_train_ex)
-                    dict_train_ex.clear() 
+#    return render(request, 'trains_arr.html', dict_train_arr)
 
-    return render(request, 'trains_arr.html', dict_train_arr)
+#def departure(request):
+#    with open("points.json", 'r') as read_file:
+#        data = json.load(read_file)
+#        point_dep=data['point'][0]['departure']
+#        dict_point={ 'points':point_dep
+#                    }
+#    return render(request, 'departure.html', dict_point)
 
-def departure(request):
-    with open("points.json", 'r') as read_file:
-        data = json.load(read_file)
-        point_dep=data['point'][0]['departure']
-        dict_point={ 'points':point_dep
-                    }
-    return render(request, 'departure.html', dict_point)
-
-def arrival(request):
-    with open("points.json", 'r') as read_file:
-        data = json.load(read_file)
-        point_arr=data['point'][0]['arrival']
-        dict_point1={ 
-                     'points':point_arr
-                    }
-    
-    return render(request, 'arrival.html', dict_point1)
+#def arrival(request):
+#    with open("points.json", 'r') as read_file:
+#        data = json.load(read_file)
+#        point_arr=data['point'][0]['arrival']
+#        dict_point1={ 
+#                     'points':point_arr
+#                    }
+#    
+#    return render(request, 'arrival.html', dict_point1)
 
 def addstation(request):
     if request.POST:
