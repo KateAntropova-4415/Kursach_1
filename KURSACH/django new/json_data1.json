@@ -36,15 +36,6 @@
               "time_dep": "5.04.2020 6:10",
               "time_arr": "13.04.2020 4:45",
               "price": "6500"
-            },
-            {
-              "train_name": "tyiuy",
-              "train_type": "tyuiyt",
-              "class": "tyui",
-              "departure": "tyiutyu",
-              "time_dep": "tuytyut",
-              "time_arr": "tyutu",
-              "price": "4567"
             }
           ],
           "arrival": [
@@ -227,39 +218,7 @@
           ]
         }
       ]
-    },
-    {
-      "id": 3,
-      "name": "Курский вокзал",
-      "address": "Москва",
-      "trips": [
-        {
-          "departure": [
-            {
-              "train_name": "jkjlk",
-              "train_model": "jkjlk",
-              "train_type": "jkljlk",
-              "class": "jkjlkj",
-              "departure": "jlkjkl",
-              "time_dep": "jkljl",
-              "time_arr": "jkjl",
-              "price": "2424"
-            }
-          ],
-          "arrival": [
-            {
-              "train_name": "yuyuiy",
-              "train_model": "uyiuyiu",
-              "train_type": "uyuiy",
-              "class": "yuiyi",
-              "arrival": "yuiy",
-              "time_dep": "yuyi",
-              "time_arr": "yuyiuy",
-              "price": "yuyiu"
-            }
-          ]
-        }
-      ]
     }
+    
   ]
 }

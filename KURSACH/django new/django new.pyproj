@@ -67,13 +67,9 @@
     <Content Include="app\templates\admin.html" />
     <Content Include="app\templates\alluser.html" />
     <Content Include="app\templates\arrival.html" />
-    <Content Include="app\templates\departamentsInfo.html" />
     <Content Include="app\templates\departure.html" />
-    <Content Include="app\templates\disciplineInfo.html" />
     <Content Include="app\templates\Example.html" />
-    <Content Include="app\templates\groupsInfo.html" />
     <Content Include="app\templates\HomePage.html" />
-    <Content Include="app\templates\index.html" />
     <Content Include="app\templates\login.html" />
     <Content Include="app\templates\moder.html" />
     <Content Include="app\templates\moderlist.html" />
@@ -81,6 +77,7 @@
     <Content Include="app\templates\point-trains-admin.html" />
     <Content Include="app\templates\point-trains.html" />
     <Content Include="app\templates\stationlist.html" />
+    <Content Include="app\templates\stationlistuser.html" />
     <Content Include="app\templates\trains.html" />
     <Content Include="app\templates\trains_dep.html" />
     <Content Include="app\templates\trains_arr.html" />

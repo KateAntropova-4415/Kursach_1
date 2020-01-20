@@ -47,5 +47,16 @@
     <h1>{{ request.session.login }}</h1>
     <p>{{ dict.position }}</p>
 {% endif %}
+
+<table  align="center" border="1">
+        <tr><th colspan="1">Действия</th></tr>
+
+    
+        <tr>
+    <td class="special"><a href="{% url 'stationlistuser' %}">Список железнодорожных вокзалов</a></td></tr>
+        <tr>
+    <td class="special"><a href="{% url 'logout' %}">Выйти</a></td></tr>
+</table>
+</body>
 </body>
 </html>

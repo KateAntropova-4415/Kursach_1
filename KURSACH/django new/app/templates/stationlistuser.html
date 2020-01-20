@@ -42,16 +42,13 @@
 
 <body bgcolor="#FFE4B5" link="black" vlink="#FF0000." alink="#800080">
 <h1>Железнодорожные вокзалы:</h1>
-{%  if Func == "Admin" or Func == "Moder" %}
-<button><a href="{% url 'addstation' %}">Добавить</a></button>
+{% if Func == "User" %}
 
 {% for i in Station %}
 <table align="center" border="1" >
         <tr>
             <td colspan="2">
             <a href="{% url 'station_detail_url' i.id %}">{{ i.name }}</a>
-            <button><a href="{% url 'addtripdep' i.id %}">Добавить отправление</a></button>
-            <button><a href="{% url 'addtriparr' i.id %}">Добавить прибытие</a></button>
             </td>
     </tr>
 </table>
