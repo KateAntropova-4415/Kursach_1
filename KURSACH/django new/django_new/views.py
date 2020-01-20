@@ -304,6 +304,11 @@ def addstation(request):
         checkAddress = req.get("address")
         #checkTime = req.get("Time")
         checkerror = True
+        trip={
+            "departure":[],
+            "arrival":[]
+            }
+        
         for i in Station['railway_station']:
             if checkName == i['name']:
                 print("Error")
@@ -315,10 +320,7 @@ def addstation(request):
                 "id": ID,
                 "name": checkName,
                 "address": checkAddress,
-                #"Work": True,
-                #"Time": checkTime,
-                #"Docks": [],
-                #"Workers": []
+                "trip": trip
             }
             data["railway_station"].append(newStation)
             with open('json_data1.json', 'w', encoding='utf-8') as read_file_json:
@@ -424,7 +426,7 @@ def addtripdep(request, station_id):
         with open('json_data1.json', 'w', encoding='utf-8') as read_file_json:
             read_file_json.write(json.dumps(data, ensure_ascii=False, separators=(',', ': '), indent=2))
 
-    return render(request, "addtripdep.html", {'name': Name})
+    return render(request, "addtripdep.html", {})
 
 def addtriparr(request, id):
     if request.POST:
@@ -442,7 +444,7 @@ def addtriparr(request, id):
         checkTimeDep = req.get("Time_dep")
         checkTimeArr = req.get("Time_arr")
         checkPrice = req.get("Price")
-        Name = data['railway_station'][station_id]['name']
+        Name = data['railway_station'][id]['name']
         #ID = len(Station['railway_station'][id]['trips'][0]['departure']) + 1
         #['railway_station'][station_id]['trips'][0]['departure']
         newtrip = {
@@ -459,7 +461,7 @@ def addtriparr(request, id):
         with open('json_data1.json', 'w', encoding='utf-8') as read_file_json:
             read_file_json.write(json.dumps(data, ensure_ascii=False, separators=(',', ': '), indent=2))
 
-    return render(request, "addtriparr.html", {'name': Name})
+    return render(request, "addtriparr.html", {})
 
 
 
