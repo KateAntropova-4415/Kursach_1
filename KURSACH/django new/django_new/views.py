@@ -17,41 +17,12 @@ Loginglobal = "none"
 Passglobal = "none"
 Funcglobal = "none"
 
-with open("json_data1.json", encoding='utf-8') as read_file:
-    data = json.load(read_file)
-    stations = data['railway_station']
-    dict_stations = {'railway_station': stations}
-
-#def example(request):
-#    return render(request, 'Example.html', {})
 def home(request):
     with open("json_data1.json", encoding='utf-8') as read_file:
         data = json.load(read_file)
         stations = data['railway_station']
         dict_stations = {'railway_station': stations}
     return render(request, 'HomePage.html', dict_stations)
-#def page2(request):
-#    return render(request, 'page2.html', {})
-#def trains(request):
-#    return render(request, 'trains.html', {})
-
-def account(request):
-    page = 'account.html'
-    if "id" not in request.session:
-        page = "404.html"
-    return render(request, page, {})
-
-#def administ(request):
-#    page = 'admin.html'
-#    if "id" not in request.session:
-#        page = "404.html"
-#    return render(request, page, {})
-
-#def moder(request):
-#    page = 'moder.html'
-#    if "id" not in request.session:
-#        page = "404.html"
-#    return render(request, page, {})
 
 def account(request):
     page = 'account.html'
@@ -66,8 +37,6 @@ def login(request):
     global Loginglobal
     global Passglobal
     global Funcglobal
-    #if 'id' in request:
-    #return redirect("/account")
     if request.POST:
         with open("users.json", 'rb') as read_file_json:
             users = json.load(read_file_json)
@@ -86,11 +55,6 @@ def login(request):
                 request.session['id'] = user['id']
                 request.session['login'] = user['login']
                 request.session['position'] = user['position']
-                #if request.session['position'] == "Admin":
-                #    return redirect("/administ")
-                #elif request.session['position'] == "Moder":
-                #    return redirect("/moder")
-                #elif request.session['position'] == "User":
                 return redirect("/account")
 
     return render(request, 'login.html', {'form': logForm,
@@ -99,7 +63,10 @@ def login(request):
 def point_trains(request, station_id):
     with open("json_data1.json", encoding='utf-8') as read_file:
         data = json.load(read_file)
+        new_id = len(data['railway_station']) - 1
         station_id = int(station_id)
+        if new_id < station_id:
+            return redirect("/")
         station_name = data['railway_station'][station_id]['name']
         station_adress = data['railway_station'][station_id]['address']
         trips_dep = data['railway_station'][station_id]['trips'][0]['departure']
@@ -111,76 +78,10 @@ def point_trains(request, station_id):
 
     return render(request, 'point-trains.html', dict_trips)
 
-#def points(request):
-#    with open("points.json", 'r') as read_file:
-#        data = json.load(read_file)
-#        point_dep=data['point'][0]['departure']
-#        point_arr=data['point'][0]['arrival']
-#        dict_point={ 'points_dep':point_dep,
-#                     'points_arr':point_arr
-#                    }
-#    return render(request, 'page2.html', dict_point)
-
-#def point_dep(request, point_name):
-#    with open("json_data1.json", encoding='utf-8') as read_file:
-#        data = json.load(read_file)
-#        station=data['railway_station']
-#        dict_train_dep={}
-#        dict_train_ex={}
-#        for i in station:
-#            trip = i['trips'][0]['departure']
-#            for j in trip:
-#                if j['departure'] == point_name:
-#                    name_stat = i['name']
-#                    dep_point = j
-#                    #arr_point.append(name_stat)
-#                    dict_train_ex={ 'name' : name_stat,
-#                                   'points':dep_point
-#                        }
-#                    dict_train_dep.update(dict_train_ex)
-#                    dict_train_ex.clear() 
-#
-#    return render(request, 'trains_dep.html', dict_train_dep)
-
-#def point_arr(request, point_name):
-#    with open("json_data1.json", encoding='utf-8') as read_file:
-#        data = json.load(read_file)
-#        station = data['railway_station']
-#        dict_train_arr = {}
-#        dict_train_ex = {}
-#        for i in station:
-#            for j in i['arrival']:
-#                if j['arrival'] == point_name:
-#                    name_stat  =i['name']
-#                    arr_point = j
-#                    arr_point.append(name_stat)
-#                    dict_train_ex= { 'name' : name_stat,
-#                                    'points':arr_point
-#                                   }
-#                    dict_train_arr.update(dict_train_ex)
-#                    dict_train_ex.clear() 
-
-#    return render(request, 'trains_arr.html', dict_train_arr)
-
-#def departure(request):
-#    with open("points.json", 'r') as read_file:
-#        data = json.load(read_file)
-#        point_dep=data['point'][0]['departure']
-#        dict_point={ 'points':point_dep
-#                    }
-#    return render(request, 'departure.html', dict_point)
-
-#def arrival(request):
-#    with open("points.json", 'r') as read_file:
-#        data = json.load(read_file)
-#        point_arr=data['point'][0]['arrival']
-#        dict_point1={ 
-#                     'points':point_arr
-#                    }
-#    
-#    return render(request, 'arrival.html', dict_point1)
-
 def addstation(request):
+    global Funcglobal
+    if Funcglobal == "none" or Funcglobal == "User":
+        return redirect("/")
     if request.POST:
         with open("json_data1.json", encoding='utf-8') as read_file_json:
             data = json.load(read_file_json)
@@ -188,7 +89,6 @@ def addstation(request):
         req = request.POST
         checkName = req.get("name")
         checkAddress = req.get("address")
-        #checkTime = req.get("Time")
         checkerror = True
         trip=[{
             "departure":[],
@@ -216,6 +116,9 @@ def addstation(request):
 
 @csrf_exempt
 def adduser(request):
+    global Funcglobal
+    if Funcglobal == "none" or Funcglobal == "User":
+        return redirect("/")
     if request.POST:
         userform = AddUser()
         with open("users.json", encoding='utf-8') as read_file_json:
@@ -244,9 +147,7 @@ def adduser(request):
 
     return render(request, "adduser.html", {})
 
-
-@csrf_exempt
-def addmoderator(request):
+def addusernew(request):
     if request.POST:
         userform = AddUser()
         with open("users.json", encoding='utf-8') as read_file_json:
@@ -267,7 +168,40 @@ def addmoderator(request):
                 "login": checkLogin,
                 "id": ID,
                 "password": checkPass,
-                #"Work": True,
+                "position": "User"
+            }
+            users.append(newuser)
+            with open('users.json', 'w', encoding='utf-8') as read_file_json:
+                read_file_json.write(json.dumps(users, ensure_ascii=False, separators=(',', ': '), indent=2))
+
+    return render(request, "addusernew.html", {})
+
+
+@csrf_exempt
+def addmoderator(request):
+    global Funcglobal
+    if Funcglobal == "none" or Funcglobal == "User" or Funcglobal == "Moder":
+        return redirect("/")
+    if request.POST:
+        userform = AddUser()
+        with open("users.json", encoding='utf-8') as read_file_json:
+            data = json.load(read_file_json)
+        users = data
+        req = request.POST
+        checkLogin = req.get("login")
+        checkPass = req.get("password")
+        checkerror = True
+        for i in users:
+            if checkLogin == i['login']:
+                print("Error")
+                checkerror = False
+                break
+        if checkerror:
+            ID = len(users) + 1
+            newuser = {
+                "login": checkLogin,
+                "id": ID,
+                "password": checkPass,
                 "position": "Moder"
             }
             users.append(newuser)
@@ -277,13 +211,13 @@ def addmoderator(request):
     return render(request, "addmoder.html", {})
 
 def addtripdep(request, station_id):
+    global Funcglobal
+    if Funcglobal == "none" or Funcglobal == "User":
+        return redirect("/")
     if request.POST:
-        #id = id - 1
-        #dock = dock - 1
         station_id=int(station_id)
         with open("json_data1.json", encoding='utf-8') as read_file_json:
             data = json.load(read_file_json)
-        #Station = data
         req = request.POST
         checkName = req.get("Name")
         checkModel = req.get("Model")
@@ -294,8 +228,6 @@ def addtripdep(request, station_id):
         checkTimeArr = req.get("Time_arr")
         checkPrice = req.get("Price")
         Name = data['railway_station'][station_id]['name']
-        #ID = len(Station['railway_station'][id]['trips'][0]['departure']) + 1
-        #['railway_station'][station_id]['trips'][0]['departure']
         newtrip = {
                 "train_name": checkName,
                 "train_model": checkModel,
@@ -313,13 +245,13 @@ def addtripdep(request, station_id):
     return render(request, "addtripdep.html", {})
 
 def addtriparr(request, id):
+    global Funcglobal
+    if Funcglobal == "none" or Funcglobal == "User":
+        return redirect("/")
     if request.POST:
-        #id = id - 1
-        #dock = dock - 1
         id=int(id)
         with open("json_data1.json", encoding='utf-8') as read_file_json:
             data = json.load(read_file_json)
-        #Station = data
         req = request.POST
         checkName = req.get("Name")
         checkModel = req.get("Model")
@@ -330,8 +262,6 @@ def addtriparr(request, id):
         checkTimeArr = req.get("Time_arr")
         checkPrice = req.get("Price")
         Name = data['railway_station'][id]['name']
-        #ID = len(Station['railway_station'][id]['trips'][0]['departure']) + 1
-        #['railway_station'][station_id]['trips'][0]['departure']
         newtrip = {
                 "train_name": checkName,
                 "train_model": checkModel,
@@ -347,8 +277,6 @@ def addtriparr(request, id):
             read_file_json.write(json.dumps(data, ensure_ascii=False, separators=(',', ': '), indent=2))
 
     return render(request, "addtriparr.html", {})
-
-
 
 def moderatorlist(request):
     global Funcglobal
@@ -397,6 +325,9 @@ def stationlistuser(request):
     return render(request, "stationlistuser.html", {"Station": Stations, "Func": Funcglobal})
 
 def point_trains_admin(request, station_id):
+    global Funcglobal
+    if Funcglobal == "none":
+        return redirect("/")
     with open("json_data1.json", encoding='utf-8') as read_file:
         data = json.load(read_file)
         station_id = int(station_id)
@@ -413,6 +344,8 @@ def point_trains_admin(request, station_id):
 
     return render(request, 'point-trains-admin.html', dict_trips_1)
 
+def error404(request):
+    return render(request, '404.html', {})
 
 def logout(request):
     global Loginglobal

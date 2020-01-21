@@ -28,5 +28,11 @@
     "id": 5,
     "password": "2121",
     "position": "Moder"
+  },
+  {
+    "login": "Alexey",
+    "id": 6,
+    "password": "6789",
+    "position": "User"
   }
 ]

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bc17009a-11ef-42ee-8a94-3c1b19047970" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/django new/app/templates/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/django new/app/templates/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django new/app/templates/Example.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django new/app/templates/HomePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/django new/app/templates/HomePage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django new/app/templates/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/django new/app/templates/account.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django new/app/templates/admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django new/app/templates/arrival.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django new/app/templates/departure.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django new/app/templates/moder.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django new/app/templates/page2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django new/app/templates/trains.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django new/app/templates/trains_arr.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django new/app/templates/trains_dep.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django new/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/django new/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django new/django new.pyproj" beforeDir="false" afterPath="$PROJECT_DIR$/django new/django new.pyproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django new/django_new/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/django new/django_new/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django new/django_new/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/django new/django_new/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django new/json_data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/django new/json_data1.json" beforeDir="false" afterPath="$PROJECT_DIR$/django new/json_data1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django new/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/django new/users.json" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1WhKvI2Tn1aNEgA85YFdjsOMSGt" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bc17009a-11ef-42ee-8a94-3c1b19047970" name="Default Changelist" comment="" />
+      <created>1579596615650</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1579596615650</updated>
+    </task>
+    <servers />
+  </component>
+</project>
